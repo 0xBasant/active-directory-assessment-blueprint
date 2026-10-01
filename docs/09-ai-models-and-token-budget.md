@@ -26,7 +26,7 @@ Reasoning tokens are billed as output tokens. OpenAI's reasoning guide recommend
 
 ## What NodeZero publicly says about AI
 
-Horizon3 describes a hybrid architecture using knowledge graphs/“Cyber Terrain Map,” deterministic logic, classical machine learning, and scoped generative AI. Its public High Value Targeting documentation says that feature uses AWS Bedrock with Llama 4 Maverick in a dedicated container adjacent to the NodeZero Core, receives selected usernames/hostnames/BloodHound relationship metadata, does not train on customer data, and provides advisory output rather than modifying assets.
+Horizon3 describes an architecture combining knowledge graphs/“Cyber Terrain Map,” deterministic logic, classical machine learning, and scoped generative AI. Its High Value Targeting documentation describes a dedicated container adjacent to NodeZero Core that sends selected identity/graph metadata to Llama 4 Maverick through AWS Bedrock. The container is the inference client; the model is served by Bedrock. Horizon3 states that the feature's output is advisory and the submitted data is not used for training. [HVT architecture documentation](https://docs.horizon3.ai/portal/features/high_value_targeting/)
 
 Horizon3 has not publicly disclosed a complete per-test model call pattern or token budget. Therefore, the estimates below are for the proposed reference architecture—not a claim about NodeZero's usage.
 

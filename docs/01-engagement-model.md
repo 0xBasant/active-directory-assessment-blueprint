@@ -40,7 +40,7 @@ Request only the identities needed for the chosen mode:
 | Workstation/VPN access | Network position only | If needed | If needed | Dedicated device/session; log source IP |
 | Local administrator on sample hosts | No | Optional opt-in | Optional | Use only to validate endpoint controls and lateral-movement assumptions |
 | Privileged directory read account | No | Rare | Optional | Prefer read-only delegated access over Domain Admin |
-| DCSync-capable account | No | Only for a separately authorized password audit | Only for a separately authorized password audit | High-impact secret; tightly time-bound and transferred out of band |
+| DCSync-capable account | No | Only for a separately authorized password audit or vendor hybrid workflow requiring it | Same separate-workstream requirement | High-impact secret; tightly time-bound and transferred out of band |
 | Entra identity and MFA method | No | For hybrid/Entra scope | For hybrid/Entra scope | Dedicated test identity and approved MFA workflow |
 | SSH/FTP/RDP/SMB credentials | Not supplied by default | Only when a named in-scope system requires them | Only when required by the test plan | Prefer a dedicated account; never request broad credential dumps |
 | API/token for automation platform | No | If using platform automation | If using platform automation | Least privilege, rotation date, auditable owner |

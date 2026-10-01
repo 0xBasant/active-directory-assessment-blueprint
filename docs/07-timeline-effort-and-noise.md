@@ -54,17 +54,17 @@ Noise has at least four dimensions:
 | Authenticated directory collection | Medium | Concentrated LDAP queries | Method/domain/concurrency cap |
 | BloodHound session/local-admin collection | Medium–high | LDAP plus RPC/SMB connections across hosts | Restrict methods and host set |
 | SMB share enumeration | Medium | Authentication and tree-connect events | Metadata first, concurrency cap |
-| Password spray | High identity risk | Failed logons/Kerberos/NTLM events and lockouts | Separate approval and lockout-aware stop |
+| Password spray | Variable; rate-dependent | Failed logons/Kerberos/NTLM events; high lockout risk despite modest traffic | Separate approval and lockout-aware stop |
 | AS-REP/Kerberoast | Medium–high | Kerberos ticket events; bulk patterns are detectable | Named accounts and request cap |
 | LLMNR/NBT-NS/mDNS poisoning | High | Broadcast replies and captured auth | Short window, local segment, allow/deny lists |
 | Coercion/NTLM relay | High | RPC/SMB/HTTP/LDAP authentication chains | Named sources/targets; kill switch |
 | Endpoint agent/RAT or remote execution | High | Process/file/service/task and EDR telemetry | Named hosts, artifact register, approval |
 | SAM/LSA/LSASS/DPAPI access | Very high | Sensitive process/store access and likely EDR alerts | High-impact gate; minimal sample |
-| DCSync | Very high | Directory replication behavior from a non-DC | Separate authorization |
-| Ticket/certificate forgery validation | High | Authentication anomalies and issued/used credentials | Test identity/service, short lifetime, purge |
+| DCSync | Variable; potentially high detection significance | Directory replication behavior from a non-DC; severe credential-exposure impact even at low traffic volume | Separate authorization |
+| Ticket/certificate forgery validation | Variable; potentially high detection significance | Authentication anomalies and credential use; visibility depends on technique and auditing | Test identity/service, short lifetime, purge |
 | AD object/template/policy modification | Very high | Replicated directory state change | Simulation default; before/after + cleanup |
 
-“Low noise” is not “invisible,” and “high noise” does not automatically mean unsafe. Noise should be deliberate, bounded, and observable.
+Traffic volume, detection significance, and operational impact are separate measures. A few replication or authentication requests can have severe impact, while a large read-only collection can be operationally tolerable. These relative ratings guide planning; actual visibility depends on enabled audit policies, sensors, and alert rules. Noise should be deliberate, bounded, and observable.
 
 ## Authentication safety budget
 

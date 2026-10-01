@@ -55,7 +55,7 @@ Additional access should be modular and optional:
 - a second user in a different business unit to compare segmentation;
 - a local-admin account on a small sample of hosts for endpoint-control verification;
 - a read-only/delegated directory account for configuration coverage;
-- a DCSync-capable, short-lived identity only for a separately signed password-audit workstream;
+- a DCSync-capable, short-lived identity only for a separately signed password-audit or vendor hybrid workstream requiring it; NodeZero's documented Entra ID Hybrid workflow is one such exception, as explained in [the product analysis](10-nodezero-public-source-analysis.md);
 - approved SSH, RDP, database, application, or appliance access only for explicitly named systems.
 
 ## Execution-host requirements
