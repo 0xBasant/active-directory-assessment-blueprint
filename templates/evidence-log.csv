@@ -1,0 +1,1 @@
+evidence_id,engagement_id,action_id,test_id,utc_start,utc_end,source_entity,target_entity,tool_module,tool_version,result_status,claim_supported,sensitivity,redacted_location,raw_location_access_group,sha256,artifact_ids,cleanup_status,reviewer,notes

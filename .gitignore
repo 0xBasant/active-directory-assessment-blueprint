@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.venv/
+evidence/
+artifacts/
+secrets/
+*.kirbi
+*.ccache
+*.dmp
+*.ntds
+*.sam
+*.keytab
+*.pfx

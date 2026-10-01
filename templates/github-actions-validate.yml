@@ -1,0 +1,23 @@
+# Optional workflow template. To enable CI, place this file in
+# .github/workflows/validate.yml using an account with workflow-write access.
+name: Validate documentation
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate repository
+        run: python3 tools/validate_repository.py
+      - name: Run tests
+        run: python3 -m unittest discover -s tools -p "test_*.py"
